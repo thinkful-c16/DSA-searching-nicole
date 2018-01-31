@@ -7,5 +7,18 @@ export class Form extends React.Component {
   }
 
   render() {
-
+    return(
+      <form onSubmit={event => this.onSubmit(event)}>
+        <div>
+          <textarea 
+          onChange={this.handleInputChange}
+          name="textInput"
+          id="textInput"
+          className="textArea"
+          required
+          >
+          </textarea>
+        </div>
+      </form>
+    )
 }
