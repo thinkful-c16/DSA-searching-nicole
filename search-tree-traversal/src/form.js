@@ -2,9 +2,29 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 export default class Form extends React.Component {
+
+  constructor(props) {
+    //super allows us to access the properties in the state using this
+    super(props);
+    this.state = {
+      textInput: this.props.textInput
+    }
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
   handleInputChange(event) {
     const target = event.target;
+    this.setState({
+      textInput: target.value
+    })
+    console.log(target.value);
   }
+  
+  // onSubmit(event) {
+  //   event.preventDefault();
+  //   if(this.props.view === '')
+  // }
 
   render() {
     return(
